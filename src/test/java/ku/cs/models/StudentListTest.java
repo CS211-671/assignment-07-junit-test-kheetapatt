@@ -12,8 +12,6 @@ class StudentListTest {
     void testAddStudent() {
         StudentList students = new StudentList();
         students.addNewStudent("66100000000", "pangko");
-//        students.addNewStudent("66100000001", "marimo");
-//        students.addNewStudent("66100000002", "sushi");
 
         Student s = students.findStudentById("66100000000");
         assertEquals("pangko", s.getName());
@@ -58,4 +56,29 @@ class StudentListTest {
         String actual = students.viewGradeOfId("66100000000");
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("findStudentById test")
+    void testFindStudentById() {
+        StudentList students = new StudentList();
+        students.addNewStudent("111111", "barbie");
+        students.addNewStudent("222222", "oka");
+        students.addNewStudent("333333", "mammoth");
+
+        Student s1 = new Student("111111", "barbie");
+        assertEquals(s1, students.findStudentById("111111"));
+    }
+
+    @Test
+    @DisplayName("findStudentByObject test")
+    void testFindStudentByObject() {
+        StudentList students = new StudentList();
+        students.addNewStudent("111111", "barbie");
+        students.addNewStudent("222222", "oka");
+        students.addNewStudent("333333", "mammoth");
+
+        Student s1 = new Student("111111", "barbie");
+        assertEquals(s1, students.findStudentByObject(s1));
+    }
+
 }

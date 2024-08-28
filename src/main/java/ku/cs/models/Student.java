@@ -54,6 +54,14 @@ public class Student {
         return score;
     }
 
+    public boolean equals(Object student) {
+        Student other = (Student) student;
+        if (id.equals(other.getId()) && name.equals(other.getName())) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "{" +
