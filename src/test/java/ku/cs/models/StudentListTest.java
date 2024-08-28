@@ -66,7 +66,7 @@ class StudentListTest {
         students.addNewStudent("333333", "mammoth");
 
         Student s1 = new Student("111111", "barbie");
-        assertEquals(s1, students.findStudentById("111111"));
+        assertEquals(s1, students.findStudentById(s1.getId()));
     }
 
     @Test
